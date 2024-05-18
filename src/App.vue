@@ -1,18 +1,20 @@
-<script setup lang="ts">
-import { onMounted } from "vue";
-import { getCategoties } from "./api/category/category";
-
-onMounted(() => {
-  getCategoties();
-});
-</script>
-
 <template>
-  <div>first</div>
+  <div><HeaderComponent /></div>
+  <div class="app_layout">
+    <RouterView />
+  </div>
 </template>
 
+<script setup lang="ts">
+import { RouterView } from "vue-router";
+import HeaderComponent from "@/components/modules/HeaderComponent.vue";
+</script>
+
 <style lang="scss" scoped>
-.a {
-  background-color: black;
+.app_layout {
+  padding: 100px 0;
+  max-width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
 }
 </style>

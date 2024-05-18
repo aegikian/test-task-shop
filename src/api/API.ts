@@ -10,3 +10,8 @@ export const API = axios.create({
     Accept: "application/json",
   },
 });
+
+API.interceptors.response.use((res) => {
+  if (res.status >= 400) console.error(res.data);
+  return res;
+});
