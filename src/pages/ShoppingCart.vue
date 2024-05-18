@@ -90,7 +90,7 @@ watch(
       setTimeout(() => {
         isOpen.value = false;
         clearCart();
-      }, 1000);
+      }, 3000);
   }
 );
 </script>
