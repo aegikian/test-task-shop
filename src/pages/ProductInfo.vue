@@ -9,7 +9,7 @@
       <section class="right_card_section">
         <div class="product_info_main_info">
           <h3>{{ product?.name }}</h3>
-          <h4>Price: {{ product?.price }}</h4>
+          <h4>Price: {{ product?.price }}₽</h4>
         </div>
         <article
           class="product_info_description"
@@ -37,7 +37,7 @@ const product = ref<IProduct | null>(null);
 const { params } = useRoute();
 onMounted(async () => {
   setIsLoading(true);
-  product.value = await getProduct(params.prod_id as string);
+  product.value = await getProduct(params?.prod_id as string);
   setIsLoading(false);
 });
 </script>

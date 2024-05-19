@@ -20,7 +20,7 @@
         </button>
       </div>
     </div>
-    <h4>Amount: {{ amount }}</h4>
+    <h4>Amount: {{ amount }}₽</h4>
     <button class="cart_button_order" @click="isOpen = !isOpen">Order</button>
   </section>
   <section
@@ -35,7 +35,7 @@
   <ModalComponent v-model:is-open="isOpen">
     <template #body>
       <div class="cart_modal_body">
-        Congrats! You order on amount {{ amount }} created!
+        Congrats! You order on amount {{ amount }}₽ created!
       </div>
     </template>
   </ModalComponent>
