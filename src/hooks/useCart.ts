@@ -8,16 +8,14 @@ const useCart = (initialItems: CartItem[] = []) => {
   const filler = (item?: CartItem) => {
     if (!item) return;
     const [itemId, quantity] = item;
-    if (!items.value.has(itemId)) {
-      items.value.set(itemId, quantity);
-    } else {
-      items.value.set(itemId, items.value.get(itemId)! + quantity);
-    }
+    if (!items.value.has(itemId)) items.value.set(itemId, quantity);
+    else items.value.set(itemId, items.value.get(itemId)! + quantity);
   };
 
   for (const item of initialItems) {
     filler(item);
   }
+
   const storagePush = () => {
     localStorage.setItem(
       "cart_items",
@@ -31,10 +29,8 @@ const useCart = (initialItems: CartItem[] = []) => {
 
   const decrementOne = (itemId: number) => {
     if (!items.value.has(itemId)) return;
-
     const count = items?.value.get(itemId);
     if (count === undefined) return;
-
     if (count === 1) removeOne(itemId);
     else items.value.set(itemId, count - 1) && storagePush();
   };
@@ -59,6 +55,7 @@ const useCart = (initialItems: CartItem[] = []) => {
     if (!entries.length) return 0;
     return entries.reduce((el, acc = 0) => el + acc);
   };
+
   return {
     items,
     setItems,
