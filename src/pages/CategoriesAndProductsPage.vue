@@ -1,5 +1,5 @@
 <template>
-  <div class="categories_n_products">
+  <section class="categories_n_products">
     <nav class="categories_n_products_links">
       <RouterLink
         class="categories_n_products_link"
@@ -7,17 +7,18 @@
         v-for="route in routes"
         :to="useRoutes(route.path).to"
         :key="route.path"
-        >{{ route.name }}</RouterLink
       >
+        {{ route.name }}
+      </RouterLink>
     </nav>
     <button
       @click="handleReplace"
-      class="categories_n_products_filter_remove_bitton"
+      class="categories_n_products_filter_remove_button"
     >
       Remove filters
     </button>
     <RouterView />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -31,7 +32,6 @@ const router = useRouter();
 
 const useRoutes = (route: string) => {
   const { path, query } = useRoute();
-
   const id = query?.category_id;
 
   return {
@@ -51,29 +51,34 @@ const handleReplace = () => {
   flex-direction: column;
   gap: 40px;
   padding-left: 12px;
+
   &_links {
     display: flex;
     gap: 40px;
   }
-}
-.categories_n_products_link {
-  text-decoration: none;
-  color: black;
-  padding: 2%;
-  border-radius: 10px;
-  transition: background-color 0.5s;
-  box-sizing: border-box;
-}
-.categories_n_products_filter_remove_bitton {
-  width: max-content;
-  padding: 1%;
-  border: none;
-  border-radius: 6px;
-  transition: background-color 0.4s;
-  &:hover {
-    background-color: rgb(195, 195, 195);
+
+  &_link {
+    text-decoration: none;
+    color: black;
+    padding: 2%;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    box-sizing: border-box;
+  }
+
+  &_filter_remove_button {
+    width: max-content;
+    padding: 1%;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.4s;
+
+    &:hover {
+      background-color: rgb(195, 195, 195);
+    }
   }
 }
+
 [data-selected-route="true"] {
   color: rgb(0, 0, 0);
   background-color: rgb(208, 208, 208);

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <article
     class="categories_mapper"
     :data-selected="selected"
     :style="{ backgroundImage: `url(${category.imageUrl})` }"
@@ -7,7 +7,7 @@
     <div class="categories_mapper_bottom_block">
       <span class="categories_mapper_name">{{ category.name }}</span>
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">

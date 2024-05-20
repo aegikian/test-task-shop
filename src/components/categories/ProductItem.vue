@@ -1,6 +1,6 @@
 <template>
   <section class="product_mapper_container">
-    <div
+    <article
       class="product_mapper"
       @click="() => router.push(`/product/${product.id}`)"
       :style="{ backgroundImage: `url(${product.imageUrl})` }"
@@ -11,7 +11,7 @@
           >Price: {{ product.price }} ₽</span
         >
       </div>
-    </div>
+    </article>
     <CartButtonGroup @update="() => emit('update')" :id="product.id" />
   </section>
 </template>

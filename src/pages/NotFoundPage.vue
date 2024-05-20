@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <section>
     <h1>Page Not Found</h1>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts"></script>
