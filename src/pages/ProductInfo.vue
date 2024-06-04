@@ -48,9 +48,9 @@ onMounted(async () => {
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
-
+ 
 .product_info_card {
   width: 60%;
   display: flex;
