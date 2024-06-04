@@ -48,7 +48,7 @@ onMounted(async () => {
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 40p;
+  gap: 40px;
 }
  
 .product_info_card {
