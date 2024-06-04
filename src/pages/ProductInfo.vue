@@ -50,7 +50,7 @@ onMounted(async () => {
   align-items: center;
   gap: 40px;
 }
-
+ 
 .product_info_card {
   width: 60%;
   display: flex;
