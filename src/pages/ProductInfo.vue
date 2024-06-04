@@ -37,7 +37,7 @@ const product = ref<IProduct | null>(null);
 const { params } = useRoute();
 onMounted(async () => {
   setIsLoading(true);
-  product.value = await getProduct(params?.prod_id as string);
+  product.value  await getProduct(params?.prod_id as string);
   setIsLoading(false);
 });
 </script>
